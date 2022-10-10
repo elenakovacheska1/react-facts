@@ -4,8 +4,19 @@
     padding: 0;
 }
 
+.container {
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 1em;
+}
+
+body {
+    font-size: 1.3rem;
+}
+
 body.dark {
-    padding: 0px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     color: white;
@@ -17,16 +28,23 @@ body.light {
     color: black;
 }
 
-nav>img {
-    width: 60px;
-    margin-right: 9px;
+.nav-title,
+.nav-mode-switch {
+    display: flex;
+    text-shadow: 0 0 3px black;
+}
+
+nav img {
+    width: 3.75em;
+    margin-right: 0.5625em;
 }
 
 nav {   
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    padding: 30px 25px;
-    height: 90px;
+    padding: 1.875em 1.5625em;
+    height: 5.625em;
 }
 
 nav.dark {
@@ -39,7 +57,7 @@ nav.light {
 
 .react-course,
 .react-facts {
-    padding: 10px;
+    padding: 0.625em;
 }
 
 .react-facts {
@@ -51,41 +69,36 @@ nav.light {
     color: #DEEBF8;
     font-weight: 600;
     position: absolute;
-    right: 0px;
+    right: 0;
 }
 
 .react-course.light{
     color: black;
 }
 
-.main.light {
-    margin-top: 50px;
-    margin-left: 50px;
-    background-image: url(../public/logo512.png);
+.main.light,
+.main.dark {
+    margin-top: 3.125em;
+    margin-left: 3.125em;
     background-repeat: no-repeat;
     background-position: right 75%;
+}
+
+.main.light {
+    background-image: url(../public/logo512.png);
 }
 
 .main.dark {
-    margin-top: 50px;
-    margin-left: 50px;
     background-image: url(./images/logo-half.png);
-    background-repeat: no-repeat;
-    background-position: right 75%;
 }
 
-ul>li {
-    padding: 10px;
-}
-
-ul>li::marker {
-    font-size: 1.4rem;
-    color: #61DAFB;
+li {
+    list-style: none;
 }
 
 .modes {
     color: #61DAFB;
-    padding: 10px;
+    padding: 0.625em;
 }
 
 
@@ -93,8 +106,8 @@ ul>li::marker {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 3.75em;
+    height: 2.125em;
 }
 
 /* Hide default HTML checkbox */
@@ -120,10 +133,10 @@ ul>li::marker {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 1.625em;
+    width: 1.625em;
+    left: 0.25em;
+    bottom: 0.25em;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -159,3 +172,16 @@ input:checked+.slider:before {
 .light {
     color: black;
 } 
+
+@media (max-width: 700px) {
+    nav,
+    nav.light,
+    nav.dark {
+        flex-direction: column;
+        height: 11.25em;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+}
